@@ -10,6 +10,28 @@
       crossorigin="anonymous">
   </head>
   <body>
+    <h1>Parcel's Parcels</h1>
+    <p>A hand delivered company</p>
+    <div>
+      <form action="/package/payment" method="post">
+        <label for="envelope">Envelope</label>
+        <input type="radio" id="envelope" name="type">
+        <label for="package">Package</label>
+        <input type="radio" id="package" name="type">
+        <label for="box">Box</label>
+        <input type="radio" id="box" name="type"><br>
+        <label for="side1">Width</label>
+        <input type="number" id="side1" name="size1">
+        <label for="side2">Height</label>
+        <input type="number" id="side2" name="size2">
+        <label for="side3">Depth</label>
+        <input type="number" id="side3" name="size3"><br>
+        <label for="weight">Weight(oz)</label>
+        <input type="number" id="weight" name="weight">
+        <button type="submit">Go!</button>
+      </form>
+    </div>
 
-      </body>
+
+  </body>
 </html>

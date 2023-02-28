@@ -1,15 +1,28 @@
-using System;
-using Parcels.Models;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Parcels
+namespace ToDoList
 {
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-            
-        }
-    }
+  class Program
+  {
+  static void Main(string[] args)
+  {
+    WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+    builder.Services.AddControllersWithViews();
+
+    WebApplication app = builder.Build();
+
+    app.UseHttpsRedirection();
+
+    app.UseRouting();
+
+    app.MapControllerRoute(
+      name: "default",
+      pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+
+    app.Run();
+  }
+  }
 }
