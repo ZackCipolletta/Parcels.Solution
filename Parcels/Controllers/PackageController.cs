@@ -21,7 +21,7 @@ namespace Parcel.Controllers
     }
 
     [Route("/package")]
-    public ActionResult Payment(int size1, int size2, int size3, int weight)
+    public ActionResult Package(int size1, int size2, int size3, int weight)
     {
       Package thePackage = new Package(size1, size2, size3, weight);
       thePackage.SizeX = size1;
